@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Send, Phone, MapPin, Mail } from "lucide-react";
+import { Send, Phone, MapPin, Mail, ExternalLink } from "lucide-react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -112,7 +112,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold">Email</h3>
-                    <p className="text-gray-400">olovajs@gmail.com</p>
+                    <p className="text-gray-400">fahrurrozi3313@gmail.com</p>
                   </div>
                 </div>
 
@@ -122,7 +122,19 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold">Location</h3>
-                    <p className="text-gray-400">Laxmipure, Natore 6400</p>
+                    <p className="text-gray-400">Tangerang, Indonesia</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center space-x-4">
+                  <div className="bg-blue-500/10 p-3 rounded-lg">
+                    <ExternalLink className="w-6 h-6 text-blue-400" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold">LinkedIn</h3>
+                    <a href="https://www.linkedin.com/in/fahrurrozi03/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 transition-colors">
+                      linkedin.com/in/fahrurrozi03
+                    </a>
                   </div>
                 </div>
               </div>

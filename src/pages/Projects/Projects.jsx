@@ -5,44 +5,52 @@ import PropTypes from "prop-types";
 
 const projects = [
   {
-    title: "Olova! A Lightweight JavaScript Library",
+    title: "ScrapeIt - Chrome Extension & Admin Dashboard",
     description:
-      "A lightweight JavaScript library for creating beautiful, responsive UI components.",
-    src: "rock.jpg",
-    link: "https://i.postimg.cc/DwgWTfP0/Annotation-2025-03-19-113338.png",
+      "Advanced competitor analysis tool with Chrome extension for scraping Shopee product data, sales metrics, and store analytics. Includes comprehensive admin dashboard for user management and token-based authentication system.",
+    src: "scraping.jpg",
+    link: "scrapeit.png",
     color: "#5196fd",
-    githubLink: "https://github.com/olovajs/olova",
-    liveLink: "https://olova.js.org/",
+    technologies: ["JavaScript", "Python", "Node.js", "Chrome APIs", "Web Scraping", "Authentication"],
+    type: "🔒 Private Tool",
+    impact: "Automated competitor analysis for e-commerce businesses",
+    role: "Solo Developer",
   },
   {
-    title: "A sleek portfolio built with React and Tailwind CSS ",
+    title: "Shopee AI Chatbot Integration",
     description:
-      "A sleek portfolio built with React and Tailwind CSS to showcase your skills, projects, and experience in a modern design.",
-    src: "tree.jpg",
-    link: "https://i.postimg.cc/J75CKyrs/Annotation-2025-04-01-203959.png",
+      "Intelligent chatbot system that reads incoming Shopee store messages and responds contextually using OpenAI integration. Achieved 100% chat performance improvement for Summerscent store operations.",
+    src: "chatbot.jpg",
+    link: "chatbot.png",
     color: "#8f89ff",
-    githubLink: "https://github.com/seraprogrammer/portfolio",
-    liveLink: "https://codervai.vercel.app",
+    technologies: ["Python", "OpenAI API", "Shopee API", "NLP", "Automation"],
+    type: "🤖 AI Integration",
+    impact: "100% chat performance improvement",
+    role: "AI Integration Specialist",
   },
   {
-    title: "🚀 CodeWhisperer",
+    title: "FunnelsPro - Drag & Drop Page Builder",
     description:
-      "🚀 CodeWhisperer A powerful online code editor built with React and Tailwind CSS. Featuring real-time code execution, syntax highlighting, multi-language support, and a sleek UI. Start coding instantly! 💻✨",
-    src: "water.jpg",
-    link: "https://i.postimg.cc/J4jPVFY0/Annotation-2025-04-01-204723.png",
+      "Enhanced the FunnelsPro platform with advanced drag-and-drop functionality for creating landing pages. Developed intuitive UI components and improved user experience for no-code web development.",
+    src: "pagebuilder.jpg",
+    link: "funnels.png",
     color: "#fff",
-    githubLink: "https://github.com/seraprogrammer/codewhisperer",
-    liveLink: "https://codewhisperer.vercel.app/",
+    technologies: ["React", "JavaScript", "CSS3", "Drag & Drop API", "UI/UX"],
+    type: "🎨 Frontend Development",
+    impact: "Simplified landing page creation for non-technical users",
+    role: "Frontend Developer",
   },
   {
-    title: "CodeKori 🔥",
+    title: "Dropshipaja.com - Complete UI/UX Redesign",
     description:
-      "CodeKori is a powerful online code editor built with React and Tailwind CSS. Featuring real-time code execution, syntax highlighting, multi-language support, and a sleek UI. Start coding instantly! 💻✨",
-    src: "house.jpg",
-    link: "https://i.postimg.cc/cHQr4fpR/Annotation-2025-04-01-205350.png",
+      "Led the complete redesign and modernization of Dropshipaja.com platform. Transformed the user interface from legacy design to modern, responsive, and user-friendly experience with improved functionality.",
+    src: "redesign.jpg",
+    link: "da.png",
     color: "#ed649e",
-    githubLink: "https://github.com/seraprogrammer/CodeKori",
-    liveLink: "https://codekori.js.org",
+    technologies: ["HTML5", "CSS3", "JavaScript", "Responsive Design", "UI/UX"],
+    type: "🎨 UI/UX Redesign",
+    impact: "Complete platform modernization and improved user experience",
+    role: "UI/UX Designer & Frontend Developer",
   },
 ];
 
@@ -114,8 +122,10 @@ export default function Projects() {
                 progress={scrollYProgress}
                 range={[i * 0.25, 1]}
                 targetScale={targetScale}
-                githubLink={project.githubLink}
-                liveLink={project.liveLink}
+                technologies={project.technologies}
+                type={project.type}
+                impact={project.impact}
+                role={project.role}
               />
             );
           })}
@@ -134,8 +144,10 @@ function Card({
   progress,
   range,
   targetScale,
-  githubLink,
-  liveLink,
+  technologies,
+  type,
+  impact,
+  role,
 }) {
   const container = useRef(null);
   const scale = useTransform(progress, range, [1, targetScale]);
@@ -160,8 +172,7 @@ function Card({
       >
         {/* Modern split card design */}
         <div className="w-full flex flex-col md:flex-row bg-zinc-900 rounded-2xl overflow-hidden shadow-xl">
-          {/* Image section - full width on mobile, 55% on desktop */}
-          <div className="w-full md:w-[55%] h-[250px] md:h-[400px] lg:h-[450px] relative overflow-hidden">
+          <div className="w-full md:w-[55%] h-[250px] md:h-[400px] lg:h-[450px] relative overflow-hidden" style={{    alignSelf: "center" }}>
             <motion.img
               src={url}
               alt={title}
@@ -200,58 +211,67 @@ function Card({
               <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-2 md:mb-4">
                 {title}
               </h2>
-              <p className="text-sm md:text-base text-gray-400 leading-relaxed line-clamp-3 md:line-clamp-none max-w-md">
+              
+              {/* Project Type Badge */}
+              <div className="inline-block px-3 py-1 mb-3 text-xs font-medium rounded-full bg-gray-800 text-gray-300 border border-gray-700">
+                {type}
+              </div>
+              
+              <p className="text-sm md:text-base text-gray-400 leading-relaxed mb-4">
                 {description}
               </p>
+
+              {/* Technologies */}
+              <div className="mb-4">
+                <h4 className="text-xs font-semibold text-gray-500 mb-2 uppercase tracking-wider">Tech Stack</h4>
+                <div className="flex flex-wrap gap-2">
+                  {technologies.map((tech, idx) => (
+                    <span
+                      key={idx}
+                      className="px-2 py-1 text-xs bg-gray-800/50 text-gray-300 rounded border border-gray-700/50"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Role and Impact */}
+              <div className="space-y-2">
+                <div>
+                  <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Role: </span>
+                  <span className="text-sm text-gray-300">{role}</span>
+                </div>
+                <div>
+                  <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Impact: </span>
+                  <span className="text-sm text-gray-300">{impact}</span>
+                </div>
+              </div>
             </div>
 
             <div className="mt-4 md:mt-auto pt-4">
               <div className="w-full h-[1px] bg-gray-800 mb-4 md:mb-6" />
 
-              <div className="flex items-center gap-4">
-                {/* GitHub Link */}
-                <motion.a
-                  href={githubLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-center gap-2"
-                  whileHover={{ y: -3 }}
-                  transition={{ type: "spring", stiffness: 400 }}
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="22"
-                    height="22"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke={color}
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                  </svg>
-                  <span
-                    className="text-xs md:text-sm font-medium"
-                    style={{ color }}
-                  >
-                    Code
-                  </span>
-                </motion.a>
+              <div className="flex items-center justify-between">
+                {/* Project Status */}
+                <div className="flex items-center gap-2">
+                  <div
+                    className="w-2 h-2 rounded-full animate-pulse"
+                    style={{ backgroundColor: color }}
+                  />
+                  <span className="text-xs text-gray-500">Private Project</span>
+                </div>
 
-                {/* Live Link */}
-                <motion.a
-                  href={liveLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-center gap-2"
-                  whileHover={{ y: -3 }}
+                {/* Contact for Details */}
+                <motion.div
+                  className="group flex items-center gap-2 cursor-pointer"
+                  whileHover={{ y: -2 }}
                   transition={{ type: "spring", stiffness: 400 }}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="22"
-                    height="22"
+                    width="18"
+                    height="18"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke={color}
@@ -259,17 +279,15 @@ function Card({
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   >
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <line x1="2" y1="12" x2="22" y2="12"></line>
-                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                   </svg>
                   <span
                     className="text-xs md:text-sm font-medium"
                     style={{ color }}
                   >
-                    Live
+                    Contact for Details
                   </span>
-                </motion.a>
+                </motion.div>
               </div>
             </div>
           </div>
@@ -289,6 +307,8 @@ Card.propTypes = {
   progress: PropTypes.object.isRequired,
   range: PropTypes.array.isRequired,
   targetScale: PropTypes.number.isRequired,
-  githubLink: PropTypes.string.isRequired,
-  liveLink: PropTypes.string.isRequired,
+  technologies: PropTypes.array.isRequired,
+  type: PropTypes.string.isRequired,
+  impact: PropTypes.string.isRequired,
+  role: PropTypes.string.isRequired,
 };

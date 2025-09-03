@@ -15,24 +15,24 @@ const EducationSection = () => {
 
   const educationData = [
     {
-      degree: "Secondary School Certificate (SSC)",
-      school: "Natore Textile Institute",
-      mascot: "📘",
-      year: "2019-2021",
-      achievements: ["GPA: 4.89", "Subject: Science"],
-      skills: ["Mathematics", "Physics", "Chemistry", "Biology"],
+      degree: "Sarjana Sistem Informasi",
+      school: "Universitas Terbuka, Indonesia",
+      mascot: "🎓",
+      year: "September 2023 - 2027",
+      achievements: ["Currently Pursuing", "Information Systems Major"],
+      skills: ["Systems Analysis", "Database Design", "Project Management", "Software Engineering"],
       description:
-        "Focused on core science subjects with emphasis on practical laboratory work and scientific research methodologies.",
+        "Pursuing a Bachelor's degree in Information Systems with focus on software development, database management, and business process analysis.",
     },
     {
-      degree: "Higher Secondary Certificate (HSC)",
-      school: "Dottopara Model Degree College",
-      mascot: "📗",
-      year: "2021-2023",
-      achievements: ["GPA: 4.25", "Subject: Arts"],
-      skills: ["Literature", "Social Studies", "Economics", "History"],
+      degree: "Vulnerability Disclosure Certification",
+      school: "BSSN (Badan Siber dan Sandi Negara)",
+      mascot: "🛡️",
+      year: "2024",
+      achievements: ["Certified Participant", "Vulnerability Research"],
+      skills: ["Vulnerability Assessment", "Security Research", "Threat Analysis", "Ethical Hacking"],
       description:
-        "Developed strong analytical and critical thinking skills through comprehensive study of humanities and social sciences.",
+        "Participated in FGD Public Testing for BSSN Regulation on Voluntary Vulnerability Disclosure Program, contributing to national cybersecurity standards.",
     },
   ];
 

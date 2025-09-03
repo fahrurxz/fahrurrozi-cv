@@ -55,27 +55,27 @@ const ExperienceSection = () => {
   const experiences = [
     {
       icon: Network,
-      title: "WordPress Developer",
-      company: "Fiverr",
-      period: "2019 - 2020",
+      title: "Frontend Developer",
+      company: "PT. Digital Niaga Solusindo",
+      period: "September 2019 - February 2020",
       description:
-        "Worked on developing and customizing WordPress websites for clients globally.",
+        "Developed user interfaces using HTML, CSS, and JavaScript with focus on responsive design and user experience.",
     },
     {
       icon: Layers,
-      title: "Junior Frontend Developer",
-      company: "Sera Programmer",
-      period: "2021 - 2023",
+      title: "Product Designer & Junior Developer",
+      company: "PT Alona Indonesia Raya",
+      period: "March 2020 - July 2022",
       description:
-        "Assisted in building and optimizing user interfaces with a focus on responsive and interactive designs.",
+        "Contributed to frontend development using HTML/CSS and JavaScript. Created collaborative design systems and provided technical support for design teams.",
     },
     {
       icon: Code2,
-      title: "JavaScript Developer",
-      company: "OlovJS (Sera Programmer)",
-      period: "2023 - Present",
+      title: "Full-Stack Developer & Automation Engineer",
+      company: "Dropshipaja.com",
+      period: "March 2020 - September 2025",
       description:
-        "Contributed to developing JavaScript libraries and enhancing framework functionalities.",
+        "Automated vital business processes with Python, saving significant time and resources. Developed and managed backend systems and implemented API integrations for digital products.",
     },
   ];
 
